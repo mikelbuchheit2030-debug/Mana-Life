@@ -1,0 +1,54 @@
+/* Add your styles here */ 
+body 
+{ font-family: system-ui, sans-serif; 
+margin: 0; 
+padding: 2rem; 
+}
+
+.beginGame 
+{ display: block; 
+color: black; 
+background-color: #333; 
+height: 100px; 
+width: 100px; 
+font-size: 20px; 
+position: absolute; 
+top: 50%; 
+left: 50%; 
+transform: translate(-50%, -50%); 
+cursor: pointer;
+}
+
+#tabBar {
+  display: none;
+}
+
+#gameArea {
+  display: none;
+}
+
+.tab {
+  background: #333;
+  width: 75px;
+  height: 40px;   /* give it height so the gradient is visible */
+  color: white;   /* text color */
+  border: none;
+  cursor: pointer;
+}
+
+#forest {
+  display: none;
+}
+
+#explore {
+  display: none;
+}
+
+#inventory {
+  display: none;
+}
+
+.collect {
+  background-color: brown;
+  cursor: pointer;
+}
