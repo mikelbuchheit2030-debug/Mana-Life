@@ -10,19 +10,28 @@
     <button class="beginGame" id="beginGame" onclick="beginGame()">Begin</button>
     <div id="gameArea">
     <div id="tabBar">
-        <button class="tab" id="forestTab" onclick="tabToForest()">Forest</button>
-        <button class="tab" id="exploreTab" onclick="tabToExplore()">Explore</button>
-        <button class="tab" id="inventoryTab" onclick="tabToInventory()">Inventory</button>
+       <table>
+        <tr>
+          <td><button class="tab" id="forestTab" onclick="tabToForest()">Forest</button></td>
+          <td><button class="tab" id="exploreTab" onclick="tabToExplore()">Explore</button></td>
+          <td><button class="tab" id="inventoryTab" onclick="tabToInventory()">Inventory</button></td>
+          <td><button class="tab" id="caveTab" onclick="tabToCave()">Cave</button></td>
+        </tr>
+      </table>
     </div><br>
     <div id="forest">
       <button id="stick" class="collect" onclick="collectStick()">Gather sticks</button><br>
       <button id="stone" class="collect" onclick="collectStone()">Gather stones</button><br>
     </div>
     <div id="explore">
-      <button>explore function worked</button>
+      <button id="exploreButton" onclick="explore()">Explore</button>
     </div>
     <div id="inventory">
+      <button id="makeCraftingTable" class="craft" onclick="makeCraftingTable()">Make Crafting table</button>
       <p id="inventoryDisplay">If you can see this, dang it.</p>
+    </div>
+    <div id="cave">
+      <button class="collect">this is all there is so far</button>
     </div>
     
     
