@@ -52,3 +52,23 @@ cursor: pointer;
   background-color: brown;
   cursor: pointer;
 }
+
+#makeCraftingTable {
+  display: none;
+}
+
+.craft {
+  background-color: #440;
+}
+
+#cave {
+  display: none;
+}
+
+#caveTab {
+  display: none;
+}
+
+#exploreButton {
+  background-color: darkgreen;
+}
