@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mana Life</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button class="beginGame" id="beginGame" onclick="beginGame()">Begin</button>
+    <div id="gameArea">
+    <div id="tabBar">
+        <button class="tab" id="forestTab" onclick="tabToForest()">Forest</button>
+        <button class="tab" id="exploreTab" onclick="tabToExplore()">Explore</button>
+        <button class="tab" id="inventoryTab" onclick="tabToInventory()">Inventory</button>
+    </div><br>
+    <div id="forest">
+      <button id="stick" class="collect" onclick="collectStick()">Gather sticks</button><br>
+      <button id="stone" class="collect" onclick="collectStone()">Gather stones</button><br>
+    </div>
+    <div id="explore">
+      <button>explore function worked</button>
+    </div>
+    <div id="inventory">
+      <p id="inventoryDisplay">If you can see this, dang it.</p>
+    </div>
+    
+    
+    <!--Important, dont touch-->
+    </div>
+    <script src="src/resources.js"></script>
+    <script src="src/tabs.js"></script>
+    
+  </body>
+</html>
