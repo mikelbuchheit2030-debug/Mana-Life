@@ -5,27 +5,49 @@ idk the github link but heres a back-up link that works
 
 
 To-do
-Full Rework
-T2 Crafting Recipies {
--Better Tools {
---T2 Knife
---T2 Pickaxe
---T2 Shovel
---T2 Bucket
---T2 Spear }
--Axe
--Furnace (food)
--Primitive Forge (unlock tab) {
--Sand Cast
---Rod Cast
---Knife Cast
---Pickaxe Cast
---Shovel Cast
---Bucket Cast
---Spear Cast }
--Loom (unlock Tab) {
---String (uses water and thatch, dont ask why)
---Rope
---Cloth}
--T3 Crafting Table }
 
+Full Rework
+
+T2 Crafting Recipies {
+
+-Better Tools {
+
+--T2 Knife
+
+--T2 Pickaxe
+
+--T2 Shovel
+
+--T2 Bucket
+
+--T2 Spear }
+
+-Axe
+
+-Furnace (food)
+
+-Primitive Forge (unlock tab) {
+
+-Sand Cast
+
+--Rod Cast
+
+--Knife Cast
+
+--Pickaxe Cast
+
+--Shovel Cast
+
+--Bucket Cast
+
+--Spear Cast }
+
+-Loom (unlockab) {
+
+--String (uses water and thatch, dont ask why)
+
+--Rope
+
+--Cloth}
+
+-T3 Crafting Table }
