@@ -3,7 +3,6 @@ body
 { font-family: system-ui, sans-serif; 
 margin: 0; 
 padding: 2rem;
-background-color: black;  
 }
 
 .beginGame 
@@ -20,8 +19,14 @@ transform: translate(-50%, -50%);
 cursor: pointer;
 }
 
+.beginGame:hover {
+  filter: brightness(150%)
+}
+
 #tabBar {
   display: none;
+  border-width: 5px;
+  border-color: white;
 }
 
 #gameArea {
@@ -29,12 +34,17 @@ cursor: pointer;
 }
 
 .tab {
-  background: #333;
+  background: rgba(44, 0, 0, 255);
   width: 75px;
   height: 40px;  
   color: white;
-  border: none;
+  border-width: 5px;
+  border-color: rgba(45, 0, 0, 255);
   cursor: pointer;
+}
+
+.tab:hover {
+  filter: brightness(150%)
 }
 
 #forest {
@@ -50,8 +60,15 @@ cursor: pointer;
 }
 
 .collect {
-  background-color: brown;
+  background-color: rgb(30, 30, 30);
   cursor: pointer;
+  border-color: rgb(35, 35, 35);
+  border-width: 3px;
+  margin: 3px;
+}
+
+.collect:hover {
+  filter: brightness(150%)
 }
 
 #makeCraftingTable {
@@ -59,8 +76,13 @@ cursor: pointer;
 }
 
 .craft {
-  background-color: #440;
+  background-color: rgb(200, 100, 0);
   cursor: pointer;
+  border-color: rgb(220, 110, 0);
+}
+
+.craft:hover {
+  filter: brightness(150%)
 }
 
 #cave {
@@ -73,6 +95,11 @@ cursor: pointer;
 
 #exploreButton {
   background-color: darkgreen;
+  border-color: rgb(0, 140, 0);
+}
+
+#exploreButton:hover {
+  filter: brightness(150%)
 }
 
 #inventory p {
@@ -115,3 +142,4 @@ cursor: pointer;
 #craftingTableT2 {
   display: none;
 }
+
