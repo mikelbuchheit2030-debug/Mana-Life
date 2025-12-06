@@ -31,11 +31,11 @@ function renderInventory() {
     dirt + " Dirt<br>" +
     clay + " Clay<br>" +
     metal + " Metal<br>" + 
-    (crudeBucketFull ? "Water full<br>" : "Water empty<br>")
+    (crudeBucketFull ? "Water full<br>" : "Water empty<br>");
 
   const items = [];
   if (craftingTableT1) items.push("a Crafting Table");
-  if (craftingTableT2) items.push("a Better Crafting Table")
+  if (craftingTableT2) items.push("a Better Crafting Table");
   if (crudeKnife) items.push("a Crude Knife");
   if (crudePickaxe) items.push("a Crude Pickaxe");
   if (crudeBucket) items.push("a Crude Bucket");
@@ -43,7 +43,7 @@ function renderInventory() {
   if (crudeSpear) items.push("a Crude Spear");
 
   if (items.length > 0) {
-    inventoryText += "And you have: " + items.join(", \n");
+    inventoryText += "And you have:<br>" + items.join("<br>");
   }
 
   document.getElementById("inventoryDisplay").innerHTML = inventoryText;
@@ -55,7 +55,6 @@ function renderInventory() {
     hide("makeCraftingTable");
   }
 }
-
 
 // Collection
 window.collectStick = function() {
@@ -79,29 +78,28 @@ window.mineDirt = function() {
 };
 
 window.mineCave = function() {
-  if (crudePickaxe === false) {
+  if (!crudePickaxe) {
     alert("You need a Crude Pickaxe to mine in the cave!");
     return;
   }
   stone += 10;
   metal += 1;
   renderInventory();
- 
 };
 
 window.huntMeat = function() {
   meat += 5;
-}
-
+  renderInventory();
+};
 
 window.makeClay = function() {
-  if (dirt >= 5 && crudeBucketFull === true){
+  if (dirt >= 5 && crudeBucketFull) {
     dirt -= 5;
     clay++;
     crudeBucketFull = false;
     renderInventory();
   }
-}
+};
 
 // Crafting table
 window.makeCraftingTable = function() {
@@ -122,36 +120,35 @@ window.beginGame = function() {
   show("tabBar");
   show("forest");
   hide("hunting");
+  refreshTabAvailability();
 };
 
 window.tabToForest = function() {
   show("forest"); hide("explore"); hide("inventory"); hide("cave"); hide("hunting"); hide("craftingTable");
-  if (caveFound) show("caveTab");
-  if (craftingTableT1) show("craftingTab");
+  refreshTabAvailability();
 };
 
 window.tabToExplore = function() {
   hide("forest"); show("explore"); hide("inventory"); hide("cave"); hide("hunting"); hide("craftingTable");
-  if (caveFound) show("caveTab");
-  if (craftingTableT1) show("craftingTab");
-  if (crudeBucket) show("fillBucket")
-  if (crudeShovel) show("mineDirt")
+  refreshTabAvailability();
+  if (crudeBucket) show("fillBucket");
+  if (crudeShovel) show("mineDirt");
 };
 
 window.tabToInventory = function() {
   hide("forest"); hide("explore"); show("inventory"); hide("cave"); hide("hunting"); hide("craftingTable");
   renderInventory();
-  if (caveFound) show("caveTab");
-  if (craftingTableT1) show("craftingTab");
+  refreshTabAvailability();
 };
 
 window.tabToCave = function() {
   hide("forest"); hide("explore"); hide("inventory"); show("cave"); hide("hunting"); hide("craftingTable");
-  if (craftingTableT1) show("craftingTab");
+  refreshTabAvailability();
 };
 
 window.tabToCrafting = function() {
   hide("forest"); hide("explore"); hide("inventory"); hide("cave"); show("craftingTable"); hide("hunting");
+  refreshTabAvailability();
   if (craftingTableT2) {
     document.getElementById("craftingTableT2").style.display = "block";
   }
@@ -159,7 +156,13 @@ window.tabToCrafting = function() {
 
 window.tabToHunting = function() {
   hide("forest"); hide("explore"); hide("inventory"); hide("cave"); hide("craftingTable"); show("hunting");
+  refreshTabAvailability();
 };
+
+function refreshTabAvailability() {
+  if (caveFound) show("caveTab"); else hide("caveTab");
+  if (crudeSpear) show("huntingTab"); else hide("huntingTab");
+}
 
 // Explore
 window.explore = function() {
@@ -168,7 +171,7 @@ window.explore = function() {
     show("caveTab");
   }
   if (craftingTableT2) {
-    console.log("You beat the game so far")
+    console.log("You beat the game so far");
   }
 };
 
@@ -198,7 +201,7 @@ window.makeCrudePickaxe = function() {
     stone -= 25;
     crudePickaxe = true;
     hide("makeCrudePickaxe");
-    show("mineCave")
+    show("mineCave");
     renderInventory();
   }
 };
@@ -243,12 +246,13 @@ window.makeCrudeSpear = function() {
   }
 };
 
-window.makeCraftingTableT2 = function(){
-  if (metal >= 30 && clay >= 15 && crudeRope >= 5){
-    crudeRope-=5;
+window.makeCraftingTableT2 = function() {
+  if (metal >= 30 && clay >= 15 && crudeRope >= 5) {
+    crudeRope -= 5;
     metal -= 30;
     clay -= 15;
     craftingTableT2 = true;
-
+    show("craftingTableT2");
+    renderInventory();
   }
 };
