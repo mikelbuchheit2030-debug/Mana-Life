@@ -3,6 +3,8 @@ a work in progress game that goes into great detail what would happen if you sud
 idk the github link but heres a back-up link that works
 [https://2628510.playcode.io/](url)
 
+I will check Issues every tuesday and thursday
+
 
 To-do
 
