@@ -1,14 +1,18 @@
 # Mana-Life
 a work in progress game that goes into great detail what would happen if you sudden got lost in a magical world but in a forest
-idk the github link but heres a back-up link that works
+idk the github link but heres a back-up link that works. 
 [https://2628510.playcode.io/](url)
 
-I will check Issues every tuesday and thursday
+I will check Issues every tuesday and thursday, 
+I use playcode for the live viewing, though it requires functions to be in the form of
+window.example = function() {
+...
+}
 
 
 To-do
 
-Full Rework
+Full Rework (in progress, made more helpers and redid tier system and tab system so far )
 
 T2 Crafting Recipies {
 
