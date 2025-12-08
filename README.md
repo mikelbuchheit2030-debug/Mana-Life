@@ -12,6 +12,8 @@ window.example = function() {
 
 To-do
 
+Rework Entire game logic (done)
+
 T2 Crafting Recipies {
 
 -Better Tools {
@@ -46,7 +48,7 @@ T2 Crafting Recipies {
 
 --Spear Cast }
 
--Loom (unlockab) {
+-Loom (unlock tab) {
 
 --String (uses water and thatch, dont ask why)
 
