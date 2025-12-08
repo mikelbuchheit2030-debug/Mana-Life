@@ -7,69 +7,71 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button class="beginGame" id="beginGame" onclick="beginGame()">Begin</button>
+    <a id="begin" onclick="beginGame()">Begin</a>
 
     <div id="gameArea">
       <div id="tabBar">
         <table>
           <tr>
-            <td><button class="tab" id="forestTab" onclick="tabToForest()">Forest</button></td>
-            <td><button class="tab" id="exploreTab" onclick="tabToExplore()">Explore</button></td>
-            <td><button class="tab" id="inventoryTab" onclick="tabToInventory()">Inventory</button></td>
-            <td><button class="tab" id="caveTab" onclick="tabToCave()">Cave</button></td>
-            <td><button class="tab" id="craftingTab" onclick="tabToCrafting()">Craft</button></td>
-            <td><button class="tab" id="huntingTab" onclick="tabToHunting()">Hunting</button></td>
+            <td><button id="forestTab" class="tab" onclick="tabSwitch('forest')">Forest</button></td>
+            <td><button id="exploreTab" class="tab" onclick="tabSwitch('explore')">River</button></td>
+            <td><button id="inventoryTab" class="tab" onclick="tabSwitch('inventory')">Inventory</button></td>
+            <td><button id="caveTab" class="tab" onclick="tabSwitch('cave')">Cave</button></td>
+            <td><button id="craftingTab" class="tab" onclick="tabSwitch('crafting')">Crafting</button></td>
+            <td><button id="huntingTab" class="tab" onclick="tabSwitch('hunting')">Hunting</button></td>
           </tr>
         </table>
       </div>
 
-      <br>
-
       <div id="forest">
-        <button id="stick" class="collect" onclick="collectStick()">Gather sticks</button><br>
-        <button id="stone" class="collect" onclick="collectStone()">Gather stones</button><br>
+        <p>You wake up in a forest.</p>
+        <button id="search" class="explore" onclick="discoverCave()">Look around</button><br>
+        <button id="stickBtn" class="collect" onclick="collectStick()">Collect Sticks</button><br>
+        <button id="stoneBtn" class="collect" onclick="collectStone()">Collect Stones</button><br>
+      </div>
+
+      <div id="explore">
+        <p>River</p>
+        <button id="fillBucket" class="collect" onclick="fillBucket()">Fill bucket with water</button><br>
+        <button id="mineDirt" class="collect" onclick="mineDirt()">Dig dirt</button><br>
       </div>
 
       <div id="inventory">
-        <button id="makeCraftingTable" class="craft" onclick="makeCraftingTable()">Make Crafting table</button>
-        <p id="inventoryDisplay">If you can see this, dang it.</p>
+        <button id="makeT1Crafting" class="craft" onclick="makeT1CraftingTable()">Make crude crafting table</button>
+        <p id="inventoryDisplay">You have nothing.</p>
       </div>
 
-
-      <div id="explore">
-        <button id="exploreButton" class="collect" onclick="explore()">Explore</button><br>
-        <button id="fillBucket" class="collect" onclick="fillBucket()">Fill Bucket with Water</button><br>
-        <button id="mineDirt" class="collect" onclick="mineDirt()">Mine Dirt</button><br>
+      <div id="crafting">
+        <div id="craftingT1">
+          <p>Crude crafting</p>
+          <button class="craft" id="makeKnife" onclick="makeKnife()">Crude knife (10 sticks, 15 stones)</button><br>
+          <button class="craft" id="makeThatch" onclick="makeThatch()">Thatch (1 stick -> 1 thatch, requires knife)</button><br>
+          <button class="craft" id="makeRope" onclick="makeRope()">Crude rope (25 thatch)</button><br>
+          <button class="craft" id="makePickaxe" onclick="makePickaxe()">Crude pickaxe (20 sticks, 25 stones)</button><br>
+          <button class="craft" id="makeShovel" onclick="makeShovel()">Crude shovel (15 sticks, 10 stones)</button><br>
+          <button class="craft" id="makeBucket" onclick="makeBucket()">Crude bucket (50 stones)</button><br>
+          <button class="craft" id="makeSpear" onclick="makeSpear()">Crude spear (30 sticks, 15 stones)</button><br>
+          <button class="craft" id="makeClay" onclick="makeClay()">Clay (5 dirt + 1 bucket of water)</button><br>
+          <button class="craft" id="upgradeBucket" onclick="upgradeBucket()">Better bucket (20 metal, 10 clay)</button><br>
+          <button class="craft" id="makeT2Crafting" onclick="makeT2CraftingTable()">Better crafting table (30 metal, 15 clay, 5 rope)</button><br>
+        </div>
+        <div id="craftingT2">
+          <p>You’ve reached the temporary end. More content coming soon.</p>
+        </div>
       </div>
 
       <div id="cave">
-        <button id="mineCave" class="collect" onclick="mineCave()">Mine in Cave</button>
-      </div>
-
-
-      <div id="craftingTable">
-        <div id="craftingTableT1">
-        <button class="craft" id="makeCrudeKnife" onclick="makeCrudeKnife()">Make a Crude Knife, 10 Sticks 15 Stones</button>
-        <button id="makeThatch" class="craft" onclick="makeThatch()">Make Thatch with Crude Knife, 1 Stick → 1 Thatch</button><br>
-        <button class="craft" id="makeCrudeRope" onclick="makeCrudeRope()">Make Crude Rope, 25 Thatch</button><br>
-        <button class="craft" id="makeCrudePickaxe" onclick="makeCrudePickaxe()">Make a Crude Pickaxe, 20 Sticks 25 Stones</button><br>
-        <button class="craft" id="makeCrudeShovel" onclick="makeCrudeShovel()">Make a Crude Shovel, 15 Sticks 10 Stones</button><br>
-        <button class="craft" id="makeCrudeBucket" onclick="makeCrudeBucket()">Make a Crude Bucket, 50 Stones</button><br>
-        <button class="craft" id="makeCrudeSpear" onclick="makeCrudeSpear()">Make a Crude Spear, 30 Sticks 15 stones</button><br>
-        <button class="craft" id="makeClay" onclick="makeClay()">Make Clay, 5 Dirt + Bucket of Water</button><br>
-        <button class="craft" id="makeCraftingTableT2" onclick="makeCraftingTableT2()">Make Better Crafting Table, 30 Metal 15 Clay 5 Crude Rope</button><br>
-        </div>
-        <div id="craftingTableT2">
-        <p>You have found the temporary end</p>
-
-        </div>
+        <p id="caveStarter">You enter a cave. A pickaxe would help.</p>
+        <button id="mineStoneMetal" class="collect" onclick="mineCave()">Mine stone and raw metal</button>
+        <button id="rawMetalBtn" class="collect" onclick="collectRawMetal()">Mine raw metal</button>
       </div>
 
       <div id="hunting">
-        <button class="collect" onclick="huntMeat()">Hunt</button>
+        <p>Hunting grounds</p>
+        <button class="collect" id="huntBtn" onclick="huntMeat()">Hunt for meat</button>
       </div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="JS/Earlygame.js"></script>
   </body>
 </html>
