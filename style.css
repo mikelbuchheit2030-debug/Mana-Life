@@ -1,145 +1,109 @@
-/* Add your styles here */ 
-body 
-{ font-family: system-ui, sans-serif; 
-margin: 0; 
-padding: 2rem;
+html, body {
+  font-family: system-ui, sans-serif;
+  background: #0e0e10;
+  color: white;
+  margin: 0;
+  padding: 1rem;
 }
 
-.beginGame 
-{ display: block; 
-color: black; 
-background-color: #333; 
-height: 100px; 
-width: 100px; 
-font-size: 20px; 
-position: absolute; 
-top: 50%; 
-left: 50%; 
-transform: translate(-50%, -50%); 
-cursor: pointer;
+a {
+  text-decoration: none;
+  color: #ddd;
 }
 
-.beginGame:hover {
-  filter: brightness(150%)
+#begin {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #444;
+  padding: 1rem 1.25rem;
+  border: 3px solid #666;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-#tabBar {
-  display: none;
-  border-width: 5px;
-  border-color: white;
+#begin:hover {
+  filter: brightness(110%);
 }
 
 #gameArea {
   display: none;
 }
 
+#tabBar {
+  margin-bottom: 10px;
+}
+
 .tab {
-  background: rgba(44, 0, 0, 255);
-  width: 75px;
-  height: 40px;  
+  background: rgb(95, 92, 92);
+  width: 95px;
+  height: 40px;
   color: white;
-  border-width: 5px;
-  border-color: rgba(45, 0, 0, 255);
+  border: 3px solid rgb(70, 70, 70);
+  border-radius: 6px;
   cursor: pointer;
 }
 
-.tab:hover {
-  filter: brightness(150%)
-}
-
-#forest {
-  display: none;
-}
-
-#explore {
-  display: none;
-}
-
-#inventory {
-  display: none;
+button:hover {
+  filter: brightness(115%);
 }
 
 .collect {
-  background-color: rgb(30, 30, 30);
+  background-color: rgb(34, 139, 34);
+  border: 3px solid rgb(24, 100, 24);
+  border-radius: 6px;
+  margin: 5px;
+  padding: 8px 12px;
+  color: white;
   cursor: pointer;
-  border-color: rgb(35, 35, 35);
-  border-width: 3px;
-  margin: 3px;
-}
-
-.collect:hover {
-  filter: brightness(150%)
-}
-
-#makeCraftingTable {
-  display: none;
 }
 
 .craft {
   background-color: rgb(200, 100, 0);
-  cursor: pointer;
-  border-color: rgb(220, 110, 0);
-}
-
-.craft:hover {
-  filter: brightness(150%)
-}
-
-#cave {
-  display: none;
-}
-
-#caveTab {
-  display: none;
-}
-
-#exploreButton {
-  background-color: darkgreen;
-  border-color: rgb(0, 140, 0);
-}
-
-#exploreButton:hover {
-  filter: brightness(150%)
-}
-
-#inventory p {
-  font-size: 20px;
+  border: 3px solid rgb(160, 80, 0);
+  border-radius: 6px;
+  margin: 5px;
+  padding: 8px 12px;
   color: white;
+  cursor: pointer;
 }
 
-#craftingTable{
+.explore {
+  background-color: rgb(70, 130, 180);
+  border: 3px solid rgb(50, 100, 150);
+  border-radius: 6px;
+  margin: 5px;
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Default hidden sections/buttons */
+#craftingTab,
+#crafting,
+#craftingT2,
+#inventory,
+#explore,
+#cave,
+#hunting,
+#makeT1Crafting,
+#fillBucket,
+#mineDirt,
+#mineStoneMetal,
+#rawMetalBtn,
+#huntBtn {
   display: none;
 }
 
-#craftingTab {
-  display: none;
-}
-
-#makeThatch {
-  display: none;
-}
-
+/* Dynamic: cave and hunting tabs hidden until unlocked */
+#caveTab,
 #huntingTab {
   display: none;
 }
 
-#fillBucket {
-  display: none;
+#inventoryDisplay {
+  font-size: 16px;
+  line-height: 1.4;
 }
-
-#mineDirt {
-  display: none;
-}
-
-#mineCave {
-  display: none;
-}
-
-#craftingTableT1 {
-  display: block;
-}
-
-#craftingTableT2 {
-  display: none;
-}
-
